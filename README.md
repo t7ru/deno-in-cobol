@@ -1,5 +1,5 @@
 # Deno in COBOL
-Call Deno (JavaScript/TypeScript) from your COBOL programs because why not?!
+Call and run Deno (JavaScript/TypeScript) from your COBOL programs because why not?!
 
 ## Installation
 1. Copy `src/*.cbl` to your project
@@ -29,3 +29,6 @@ Execute any Deno command and save output to a file:
 CALL "DENO-CAPTURE" USING 
      "deno eval 'console.log(2+2)'" "/tmp/out.txt" STATUS-CODE
 ```
+
+## License
+[MIT](LICENSE)
