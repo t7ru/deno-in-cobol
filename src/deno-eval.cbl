@@ -12,10 +12,10 @@
 
        PROCEDURE DIVISION USING JS-CODE STATUS-CODE.
            MOVE SPACES TO CMD-BUFFER
-           STRING "deno eval " DELIMITED BY SIZE
-                  '"'                      DELIMITED BY SIZE
-                  FUNCTION TRIM(JS-CODE)   DELIMITED BY SIZE
-                  '"'                      DELIMITED BY SIZE
+           STRING "deno eval "           DELIMITED BY SIZE
+                  '"'                    DELIMITED BY SIZE
+                  FUNCTION TRIM(JS-CODE) DELIMITED BY SIZE
+                  '"'                    DELIMITED BY SIZE
                   INTO CMD-BUFFER
 
            CALL "SYSTEM" USING CMD-BUFFER RETURNING RET-VAL
