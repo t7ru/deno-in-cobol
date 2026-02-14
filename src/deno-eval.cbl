@@ -31,9 +31,9 @@
            END-PERFORM
            
            STRING "deno eval "               DELIMITED BY SIZE
-                   '"'                       DELIMITED BY SIZE
+                   """"                      DELIMITED BY SIZE
                    FUNCTION TRIM(ESCAPED-JS) DELIMITED BY SIZE
-                   '"'                       DELIMITED BY SIZE
+                   """"                      DELIMITED BY SIZE
                    INTO CMD-BUFFER
 
            CALL "SYSTEM" USING CMD-BUFFER RETURNING RET-VAL

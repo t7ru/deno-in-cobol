@@ -16,9 +16,9 @@
            MOVE SPACES TO CMD-BUFFER
            STRING "deno run "               DELIMITED BY SIZE
                    FUNCTION TRIM(FLAGS)     DELIMITED BY SIZE
-                   " '"                     DELIMITED BY SIZE
+                   " "                      DELIMITED BY SIZE
                    FUNCTION TRIM(FILE-PATH) DELIMITED BY SIZE
-                   "' "                     DELIMITED BY SIZE
+                   " "                      DELIMITED BY SIZE
                    FUNCTION TRIM(ARGUMENTS) DELIMITED BY SIZE
                    INTO CMD-BUFFER
 
