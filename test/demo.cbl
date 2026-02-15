@@ -42,28 +42,28 @@
                    DISPLAY "Eval Failed! Code: " STATUS-CODE
                    STOP RUN
                END-IF
-           
+
                *> 2. DENO-RUN: Running a file without args
                DISPLAY "--- Testing DENO-RUN ---"
-               CALL "DENO-RUN" USING 
+               CALL "DENO-RUN" USING
                    SCRIPT-FILE RUN-FLAGS EMPTY-ARGS STATUS-CODE
                IF STATUS-CODE NOT = 0
                    DISPLAY "Run Failed! Code: " STATUS-CODE
                    STOP RUN
                END-IF
-           
+
                *> 3. DENO-RUN: Running a file with args
                DISPLAY "--- Testing DENO-RUN ---"
-               CALL "DENO-RUN" USING 
+               CALL "DENO-RUN" USING
                    SCRIPT-FILE RUN-FLAGS RUN-ARGS STATUS-CODE
                IF STATUS-CODE NOT = 0
                    DISPLAY "Run Failed! Code: " STATUS-CODE
                    STOP RUN
                END-IF
-           
+
                *> 4. DENO-CAPTURE: Capture output to file
                DISPLAY "--- Testing DENO-CAPTURE ---"
-               CALL "DENO-CAPTURE" USING 
+               CALL "DENO-CAPTURE" USING
                    DENO-CMD OUTPUT-FILE STATUS-CODE
                IF STATUS-CODE = 0
                    DISPLAY "Output captured to: " OUTPUT-FILE
@@ -90,7 +90,7 @@
                    DISPLAY "Quoted Eval Failed! Code: " STATUS-CODE
                    STOP RUN
                END-IF
-           
+
                *> 6. Combined test
                DISPLAY "--- Testing COMBINED DENO-RUN ---"
                MOVE "--allow-net --allow-write --allow-read"
@@ -99,7 +99,7 @@
                STRING FUNCTION TRIM(COMBINED-ARG) " "
                    FUNCTION TRIM(COMBINED-OUT) DELIMITED BY SIZE
                        INTO RUN-ARGS
-               CALL "DENO-RUN" USING 
+               CALL "DENO-RUN" USING
                    "test/fetchwrite.ts" RUN-FLAGS RUN-ARGS STATUS-CODE
                IF STATUS-CODE NOT = 0
                    DISPLAY "Combined Run Failed! Code: " STATUS-CODE
@@ -118,5 +118,5 @@
                ELSE
                    DISPLAY "Combined OK: " FUNCTION TRIM(RESULT-LINE)
                END-IF
-           
+
                STOP RUN.

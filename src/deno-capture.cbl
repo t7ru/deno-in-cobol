@@ -18,7 +18,7 @@
                    FUNCTION TRIM(OUTPUT-FILE) DELIMITED BY SIZE
                    " 2>&1"                    DELIMITED BY SIZE
                    INTO CMD-BUFFER
-                   
+
            CALL "SYSTEM" USING CMD-BUFFER RETURNING RET-VAL
            MOVE RET-VAL TO STATUS-CODE
            EXIT PROGRAM.

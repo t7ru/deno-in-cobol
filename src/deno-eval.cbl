@@ -18,18 +18,18 @@
            MOVE SPACES TO CMD-BUFFER
            MOVE SPACES TO ESCAPED-JS
            MOVE 1 TO ESC-IDX
-           
+
            PERFORM VARYING JS-IDX FROM 1 BY 1
                UNTIL JS-IDX > FUNCTION LENGTH(FUNCTION TRIM(JS-CODE))
                MOVE JS-CODE(JS-IDX:1) TO JS-CHAR
-               IF JS-CHAR = "\" OR JS-CHAR = '"'
+               IF JS-CHAR = "\" OR JS-CHAR = """"
                    MOVE "\" TO ESCAPED-JS(ESC-IDX:1)
                    ADD 1 TO ESC-IDX
                END-IF
                MOVE JS-CHAR TO ESCAPED-JS(ESC-IDX:1)
                ADD 1 TO ESC-IDX
            END-PERFORM
-           
+
            STRING "deno eval "               DELIMITED BY SIZE
                    """"                      DELIMITED BY SIZE
                    FUNCTION TRIM(ESCAPED-JS) DELIMITED BY SIZE
